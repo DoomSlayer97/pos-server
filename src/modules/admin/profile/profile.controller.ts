@@ -1,6 +1,5 @@
 import { Body, Controller, Get, Param, Post, Put, Res } from "@nestjs/common"
 import { ProfileService } from "./profile.service"
-import { CreateProfileDto, UpdateProfileDto } from "./dto/profile.dto"
 import { Response } from "express"
 import { HelperService } from "src/helpers/helper.service";
 

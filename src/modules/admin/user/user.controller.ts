@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Post, Put, Res } from '@nestjs/common';
+import { CreateUserDto, UpdateUserDto, AuthUserDto, ChangePasswordUserDto } from '@classes';
 import { Response } from 'express';
 import { UserService } from './user.service';
-import { CreateUserDto, UpdateUserDto, AuthUserDto, ChangePasswordUserDto } from './dto/user.dto';
 import { HelperService } from '../../../helpers/helper.service'
 
 

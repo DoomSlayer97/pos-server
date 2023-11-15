@@ -1,8 +1,8 @@
+import { CreateCategoryDto, UpdateCategoryDto } from "@classes"
 import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Category } from "src/models/category.model";
 import { Repository } from "typeorm";
-import { CreateCategoryDto, UpdateCategoryDto } from "./dto/category.dto"
 
 @Injectable()
 export class CategoryService {

@@ -1,6 +1,6 @@
-import { Response } from 'express';
+import { CreateProductDto, UpdateProductDto } from "@classes"
 import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Post, Put, Res } from "@nestjs/common"
-import { CreateProductDto, UpdateProductDto } from "./dto/product.dto"
+import { Response } from 'express';
 import { ProductService } from "./product.service"
 import { HelperService } from "src/helpers/helper.service";
 

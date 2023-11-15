@@ -1,7 +1,8 @@
-import { Column, Entity, JoinTable, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
+import { BaseModel } from '@classes'
+import { Column, Entity, JoinTable, ManyToOne, OneToMany, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 import { Category } from "./category.model";
-import { BaseModel } from "./base.model";
 import { ProductProvider } from "./productprovider.model";
+import { OrderProduct } from "./orderproduct.model";
 
 export type ProductStatus = 
   | 'available'
@@ -34,5 +35,8 @@ export class Product extends BaseModel {
   
   @ManyToOne(() => ProductProvider, (provider) => provider.products)
   provider: ProductProvider;
+
+  @OneToMany(() => OrderProduct, (orderProduct) => orderProduct.product)
+  orderProduct: OrderProduct[];
 
 }

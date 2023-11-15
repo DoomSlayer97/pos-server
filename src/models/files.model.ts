@@ -1,5 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
-import { BaseModel } from "./base.model";
+import { BaseModel } from '@classes'
 
 @Entity()
 export class FileModel extends BaseModel {

@@ -1,7 +1,7 @@
+import { BaseModel } from '@classes'
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToOne } from 'typeorm'
 import { Profile } from './profile.model';
 import { AccessUser } from './accessuser.model';
-import { BaseModel } from './base.model';
 
 @Entity()
 export class User extends BaseModel {

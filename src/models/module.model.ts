@@ -1,7 +1,8 @@
 import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { TemplateProfile } from "./templateprofile.model";
 import { ModuleAccess } from "./moduleaccess.model";
-import { BaseModel } from "./base.model";
+import { BaseModel } from '@classes'
+
 
 @Entity()
 export class ModuleModel extends BaseModel {

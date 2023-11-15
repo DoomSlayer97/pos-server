@@ -1,38 +1,24 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from '../models/user.model';
-import { Profile } from '../models/profile.model';
-import { TemplateProfile } from 'src/models/templateprofile.model';
-import { ModuleModel } from 'src/models/module.model';
-import { ModuleAccess } from 'src/models/moduleaccess.model';
-import { AccessUser } from 'src/models/accessuser.model';
-import { Product } from 'src/models/product.model';
-import { Category } from 'src/models/category.model';
-import { ProductProvider } from 'src/models/productprovider.model';
-import { FileModel } from 'src/models/files.model';
+import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import * as path from 'path'
+
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      password: '123456',
-      database: 'db_pos',
-      username: 'root',
-      entities: [
-        User,
-        Profile,
-        TemplateProfile,
-        ModuleModel,
-        ModuleAccess,
-        AccessUser,
-        Product,
-        Category,
-        ProductProvider,
-        FileModel
-      ],
-      synchronize: true
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      useFactory: (configService: ConfigService) => ({
+        type: 'mysql',
+        host: configService.get<string>('DB_HOST'),
+        port: parseInt(configService.get<string>('DB_PORT')),
+        username: configService.get<string>('DB_USERNAME'),
+        password: configService.get<string>('DB_PASSWORD'),
+        database: configService.get<string>('DB_DATABASE'),
+        entities: [ path.join(__dirname, '/models/*.model(.js,.ts)') ],
+        synchronize: true
+      }),
+      inject: [ConfigService],
     })
   ]
 })

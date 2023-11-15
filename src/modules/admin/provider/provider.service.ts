@@ -1,8 +1,8 @@
 import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
+import { CreateProviderDto, UpdateProviderDto } from "@classes"
 import { InjectRepository } from "@nestjs/typeorm";
 import { ProductProvider } from "src/models/productprovider.model";
 import { Repository } from "typeorm";
-import { CreateProviderDto, UpdateProviderDto } from "./dto/provider.dto"
 
 @Injectable()
 export class ProviderService {

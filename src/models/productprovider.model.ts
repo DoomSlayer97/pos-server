@@ -1,5 +1,5 @@
+import { BaseModel } from '@classes'
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { BaseModel } from "./base.model";
 import { Product } from "./product.model";
 
 @Entity()

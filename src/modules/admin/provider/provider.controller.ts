@@ -1,8 +1,7 @@
-import { Body, Controller, Get, HttpCode, Param, Post, Put, Res } from "@nestjs/common";
-import { Response } from "express";
+import { CreateProviderDto, UpdateProviderDto } from "@classes";
+import { Body, Controller, Get, HttpCode, Param, Post, Put } from "@nestjs/common";
 import { ProviderService } from "./provider.service";
 import { HelperService } from "src/helpers/helper.service";
-import { CreateProviderDto, UpdateProviderDto } from "./dto/provider.dto";
 
 @Controller()
 export class ProviderController {

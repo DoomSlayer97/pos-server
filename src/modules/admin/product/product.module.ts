@@ -9,7 +9,11 @@ import { ProductProvider } from "src/models/productprovider.model"
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Product, Category, ProductProvider]),
+    TypeOrmModule.forFeature([
+      Product, 
+      Category, 
+      ProductProvider
+    ]),
     HelperModule,
   ],
   providers: [ProductService],

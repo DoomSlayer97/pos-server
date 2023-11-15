@@ -1,6 +1,5 @@
 import { Repository } from 'typeorm'
 import { Inject, Injectable } from "@nestjs/common"
-import { InjectModel } from '@nestjs/sequelize'
 import { InjectRepository } from '@nestjs/typeorm'
 import { User } from '../../../models/user.model'
 import { HelperService } from '../../../helpers/helper.service'
@@ -9,7 +8,7 @@ import {
   UpdateUserDto, 
   AuthUserDto, 
   ChangePasswordUserDto,
-} from './dto/user.dto'
+} from '@classes'
 
 @Injectable()
 export class UserService {
