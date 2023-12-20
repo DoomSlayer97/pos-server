@@ -16,7 +16,7 @@ import * as path from 'path'
         password: configService.get<string>('DB_PASSWORD'),
         database: configService.get<string>('DB_DATABASE'),
         entities: [ path.join(__dirname, '/models/*.model(.js,.ts)') ],
-        synchronize: true
+        synchronize: false
       }),
       inject: [ConfigService],
     })

@@ -21,6 +21,9 @@ export class User extends BaseModel {
   @Column()
   password: string;
 
+  @Column()
+  status: string;
+
   @ManyToOne(() => Profile, (profile) => profile.users)
   profile: Profile;
 

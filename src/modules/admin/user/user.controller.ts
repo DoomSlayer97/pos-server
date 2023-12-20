@@ -14,7 +14,7 @@ export class UserController {
   ) {}
 
   @Post()
-  async create(
+async create(
     @Body() createUserDto: CreateUserDto,
     @Res() res: Response
   ) {

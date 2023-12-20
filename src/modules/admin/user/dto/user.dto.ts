@@ -20,3 +20,7 @@ export class AuthUserDto {
 export class ChangePasswordUserDto {
   password: string;
 }
+
+export class ChangeStatusDto {
+  status: string;
+}
