@@ -8,6 +8,11 @@ export class CreateTemplateProfile1703100352046 implements MigrationInterface {
                 name: 'templateprofiles',
                 columns: [
                     {
+                        name: 'id',
+                        type: 'int',
+                        isPrimary: true
+                    },
+                    {
                         name: 'name',
                         type: 'varchar'
                     },
