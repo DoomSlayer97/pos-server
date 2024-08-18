@@ -2,9 +2,11 @@ import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "ty
 import { ModuleModel } from "./module.model";
 import { AccessUser } from "./accessuser.model";
 import { BaseModel } from '@classes'
+import { ENUMS } from "@types"
 
-
-@Entity()
+@Entity({
+  name: ENUMS.DBTABLES.MODULEACCESS
+})
 export class ModuleAccess extends BaseModel {
 
   @PrimaryGeneratedColumn()

@@ -1,16 +1,19 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm"
+import { ENUMS } from "@types"
 
 export class CreateProductProviders1702947360865 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: 'productproviders',
+                name: ENUMS.DBTABLES.PRODUCTPROVIDER,
                 columns: [
                     {
                         name: 'id',
                         type: 'int',
-                        isPrimary: true
+                        isPrimary: true,
+                        isGenerated: true,
+                        generationStrategy: "increment"
                     },
                     {
                         name: 'name',

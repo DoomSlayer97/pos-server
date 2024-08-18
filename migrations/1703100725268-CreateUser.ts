@@ -1,16 +1,20 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm"
+import { ENUMS } from "@types"
+
 
 export class CreateUser1703100725268 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: 'users',
+                name: ENUMS.DBTABLES.USER,
                 columns: [
                     {
                         name: 'id',
                         type: 'int',
-                        isPrimary: true
+                        isPrimary: true,
+                        isGenerated: true,
+                        generationStrategy: "increment"
                     },
                     {
                         name: 'firstname',

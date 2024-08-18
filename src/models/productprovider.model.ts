@@ -1,8 +1,11 @@
 import { BaseModel } from '@classes'
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { Product } from "./product.model";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm"
+import { Product } from "./product.model"
+import { ENUMS } from "@types"
 
-@Entity()
+@Entity({
+  name: ENUMS.DBTABLES.PRODUCTPROVIDER
+})
 export class ProductProvider extends BaseModel {
 
   @PrimaryGeneratedColumn()

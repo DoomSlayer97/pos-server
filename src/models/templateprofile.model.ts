@@ -1,10 +1,13 @@
 import { BaseModel } from '@classes'
-import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { Profile } from "./profile.model";
-import { ModuleModel } from "./module.model";
+import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm"
+import { Profile } from "./profile.model"
+import { ModuleModel } from "./module.model"
+import { ENUMS } from "@types"
 
 
-@Entity()
+@Entity({
+  name: ENUMS.DBTABLES.TEMPLATEPROFILE
+})
 export class TemplateProfile extends BaseModel {
   
   @PrimaryGeneratedColumn()

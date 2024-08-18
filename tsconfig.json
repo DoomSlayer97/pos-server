@@ -19,7 +19,8 @@
     "noFallthroughCasesInSwitch": false,
     "paths": {
       "@classes": ["./src/classes"],
-      "@models": ["./src/models"]
-    }
+      "@models": ["./src/models"],
+      "@types": ["./src/types"],
+    } 
   }
 }

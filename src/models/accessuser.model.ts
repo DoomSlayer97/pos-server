@@ -1,8 +1,11 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { User } from "./user.model";
 import { ModuleAccess } from "./moduleaccess.model";
+import { ENUMS } from "@types"
 
-@Entity()
+@Entity({
+  name: ENUMS.DBTABLES.ACCESSUSER
+})
 export class AccessUser {
 
   @PrimaryGeneratedColumn()

@@ -1,10 +1,13 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm"
 import { BaseModel } from '@classes'
 
-import { Order } from "./order.model";
-import { Product } from "./product.model";
+import { Order } from "./order.model"
+import { Product } from "./product.model"
+import { ENUMS } from "@types"
 
-@Entity()
+@Entity({
+  name: ENUMS.DBTABLES.ORDERPRODUCT
+})
 export class OrderProduct extends BaseModel {
 
   @PrimaryGeneratedColumn()

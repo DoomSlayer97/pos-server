@@ -1,16 +1,19 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm"
+import { ENUMS } from "@types"
 
 export class CreateAccessUsers1702948093966 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: 'accessusers',
+                name: ENUMS.DBTABLES.ACCESSUSER,
                 columns: [
                     {
                         name: 'id',
                         type: 'int',
-                        isPrimary: true
+                        isPrimary: true,
+                        isGenerated: true,
+                        generationStrategy: "increment"
                     },
                     {
                         name: 'hasAccess',

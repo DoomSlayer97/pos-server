@@ -1,9 +1,13 @@
 import { BaseModel } from '@classes'
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToOne } from 'typeorm'
-import { Profile } from './profile.model';
-import { AccessUser } from './accessuser.model';
+import { Profile } from './profile.model'
+import { AccessUser } from './accessuser.model'
+import { ENUMS } from "@types"
 
-@Entity()
+
+@Entity({
+  name: ENUMS.DBTABLES.USER
+})
 export class User extends BaseModel {
 
   @PrimaryGeneratedColumn()

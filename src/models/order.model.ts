@@ -1,11 +1,14 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToMany, ManyToOne } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToMany, ManyToOne } from "typeorm"
 import { BaseModel } from '@classes'
-import { OrderProduct } from "./orderproduct.model";
-import { Customer } from "./customer.model";
+import { OrderProduct } from "./orderproduct.model"
+import { Customer } from "./customer.model"
+import { ENUMS } from "@types"
 
 export type OrderStatus = 'success' | 'progress' | 'failed'
 
-@Entity()
+@Entity({
+  name: ENUMS.DBTABLES.ORDER
+})
 export class Order extends BaseModel {
 
   @PrimaryGeneratedColumn()

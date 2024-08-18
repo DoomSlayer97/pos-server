@@ -1,9 +1,11 @@
 import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Order } from "./order.model";
 import { BaseModel } from '@classes'
+import { ENUMS } from "@types"
 
-
-@Entity()
+@Entity({
+  name: ENUMS.DBTABLES.CUSTOMER
+})
 export class Customer extends BaseModel {
 
   @PrimaryGeneratedColumn()

@@ -1,15 +1,18 @@
 import { BaseModel } from '@classes'
-import { Column, Entity, JoinTable, ManyToOne, OneToMany, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
-import { Category } from "./category.model";
-import { ProductProvider } from "./productprovider.model";
-import { OrderProduct } from "./orderproduct.model";
+import { Column, Entity, JoinTable, ManyToOne, OneToMany, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm"
+import { Category } from "./category.model"
+import { ProductProvider } from "./productprovider.model"
+import { OrderProduct } from "./orderproduct.model"
+import { ENUMS } from "@types"
 
 export type ProductStatus = 
   | 'available'
   | 'not_avilable'
   | 'sold_out';
 
-@Entity()
+@Entity({
+  name: ENUMS.DBTABLES.PRODUCT
+})
 export class Product extends BaseModel {
   
   @PrimaryGeneratedColumn()

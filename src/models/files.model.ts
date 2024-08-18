@@ -1,7 +1,10 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 import { BaseModel } from '@classes'
+import { ENUMS } from "@types"
 
-@Entity()
+@Entity({
+  name: ENUMS.DBTABLES.FILES
+})
 export class FileModel extends BaseModel {
 
   @PrimaryGeneratedColumn()
