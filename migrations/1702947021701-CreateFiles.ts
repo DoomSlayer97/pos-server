@@ -23,7 +23,11 @@ export class CreateFiles1702947021701 implements MigrationInterface {
                         name: 'src',
                         type: 'varchar',
                     },
-
+                    {
+                        name: 'isDeleted',
+                        type: 'tinyint',
+                        default: 0
+                    },
                 ]
             }),
             true

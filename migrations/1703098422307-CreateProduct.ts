@@ -46,6 +46,11 @@ export class CreateProduct1703098422307 implements MigrationInterface {
                         name: 'providerId',
                         type: 'int',
                     },
+                    {
+                        name: 'isDeleted',
+                        type: 'tinyint',
+                        default: 0
+                    },
                 ]
             }),
             true

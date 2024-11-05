@@ -10,6 +10,13 @@ export class CreateOrderProduct1703097880661 implements MigrationInterface {
                 name: ENUMS.DBTABLES.ORDERPRODUCT,
                 columns: [
                     {
+                        name: 'id',
+                        type: 'int',
+                        isPrimary: true,
+                        isGenerated: true,
+                        generationStrategy: "increment"
+                    },
+                    {
                         name: 'quantity',
                         type: 'int',
                     },
@@ -20,6 +27,11 @@ export class CreateOrderProduct1703097880661 implements MigrationInterface {
                     {
                         name: 'productId',
                         type: 'int',
+                    },
+                    {
+                        name: 'isDeleted',
+                        type: 'tinyint',
+                        default: 0
                     },
                 ]
             }),

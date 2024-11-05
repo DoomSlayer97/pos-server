@@ -16,13 +16,13 @@ export class CreateProductDto {
   stock: number;
 
   @IsNotEmpty()
-  category: number;
+  categoryId: number;
 
   @IsNotEmpty()
   status: ProductStatus;
 
   @IsNotEmpty()
-  provider: number;
+  providerId: number;
 
 }
 
@@ -41,12 +41,12 @@ export class UpdateProductDto {
   stock: number;
 
   @IsNotEmpty()
-  category: number;
+  categoryId: number;
 
   @IsNotEmpty()
   status: ProductStatus;
 
   @IsNotEmpty()
-  provider: number;
+  providerId: number;
   
 }

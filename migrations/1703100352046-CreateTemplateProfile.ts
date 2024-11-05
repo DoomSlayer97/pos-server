@@ -20,6 +20,11 @@ export class CreateTemplateProfile1703100352046 implements MigrationInterface {
                         name: 'name',
                         type: 'varchar'
                     },
+                    {
+                        name: 'isDeleted',
+                        type: 'tinyint',
+                        default: 0
+                    },
                 ]
             }),
             true

@@ -4,6 +4,8 @@ import { ProfileModule } from "./profile/profile.module"
 import { ProductModule } from "./product/product.module"
 import { CategoryModule } from "./category/category.module"
 import { ProviderModule } from "./provider/provider.module"
+import { CustomerModule } from "./customer/customer.module"
+import { OrderModule } from "./order/order.module"
 import { RouterModule } from "@nestjs/core"
 
 @Module({
@@ -13,6 +15,8 @@ import { RouterModule } from "@nestjs/core"
     ProductModule,
     ProviderModule,
     CategoryModule,
+    CustomerModule,
+    OrderModule,
     RouterModule.register([
       {
         path: 'admin/users',
@@ -33,6 +37,14 @@ import { RouterModule } from "@nestjs/core"
       {
         path: 'admin/providers',
         module: ProviderModule
+      },
+      {
+        path: 'admin/customers',
+        module: CustomerModule
+      },
+      {
+        path: 'admin/orders',
+        module: OrderModule
       },
     ])
   ],

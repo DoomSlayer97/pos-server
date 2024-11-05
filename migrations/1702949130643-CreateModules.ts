@@ -24,6 +24,11 @@ export class CreateModules1702949130643 implements MigrationInterface {
                         name: 'templateProfileId',
                         type: 'int',
                     },
+                    {
+                        name: 'isDeleted',
+                        type: 'tinyint',
+                        default: 0
+                    },
                 ]
             }),
             true

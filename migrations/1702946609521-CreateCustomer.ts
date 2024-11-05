@@ -27,6 +27,11 @@ export class CreateCustomer1702946609521 implements MigrationInterface {
                         name: 'email',
                         type: 'varchar'
                     },
+                    {
+                        name: 'isDeleted',
+                        type: 'tinyint',
+                        default: 0
+                    },
                 ]
             }),
             true

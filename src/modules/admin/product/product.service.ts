@@ -28,14 +28,14 @@ export class ProductService {
     newProduct.stock = dto.stock;
     newProduct.status = dto.status;
 
-    const findedCategory = await this.categoryRepository.findOneBy({ id: dto.category });
+    const findedCategory = await this.categoryRepository.findOneBy({ id: dto.categoryId });
 
     if ( !findedCategory )
       throw new HttpException("category_not_found", HttpStatus.NOT_FOUND);
 
     newProduct.category = findedCategory;
 
-    const findedProvider = await this.providerRepository.findOneBy({ id: dto.provider });
+    const findedProvider = await this.providerRepository.findOneBy({ id: dto.providerId });
 
     if ( !findedProvider )
       throw new HttpException("provider_not_found", HttpStatus.NOT_FOUND);
@@ -73,14 +73,14 @@ export class ProductService {
     findedProduct.stock = dto.stock;
     findedProduct.status = dto.status;
 
-    const findedCategory = await this.categoryRepository.findOneBy({ id: dto.category });
+    const findedCategory = await this.categoryRepository.findOneBy({ id: dto.categoryId });
 
     if ( !findedCategory )
       throw new HttpException("category_not_found", HttpStatus.NOT_FOUND);
     
     findedProduct.category = findedCategory;
 
-    const findedProvider = await this.providerRepository.findOneBy({ id: dto.provider });
+    const findedProvider = await this.providerRepository.findOneBy({ id: dto.providerId });
 
     if ( !findedProvider )
       throw new HttpException("provider_not_found", HttpStatus.NOT_FOUND);

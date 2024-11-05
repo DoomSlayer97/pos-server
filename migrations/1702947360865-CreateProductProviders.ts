@@ -27,6 +27,11 @@ export class CreateProductProviders1702947360865 implements MigrationInterface {
                         name: 'email',
                         type: 'varchar'
                     },
+                    {
+                        name: 'isDeleted',
+                        type: 'tinyint',
+                        default: 0
+                    },
                 ]
             }),
             true

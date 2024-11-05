@@ -27,6 +27,11 @@ export class CreateAccessUsers1702948093966 implements MigrationInterface {
                         name: 'moduleAccessId',
                         type: 'int',
                     },
+                    {
+                        name: 'isDeleted',
+                        type: 'tinyint',
+                        default: 0
+                    },
                 ]
             }),
             true

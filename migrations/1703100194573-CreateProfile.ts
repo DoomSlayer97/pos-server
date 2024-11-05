@@ -28,6 +28,11 @@ export class CreateProfile1703100194573 implements MigrationInterface {
                         name: 'templateProfileId',
                         type: 'int',
                     },
+                    {
+                        name: 'isDeleted',
+                        type: 'tinyint',
+                        default: 0
+                    },
                 ]
             }),
             true

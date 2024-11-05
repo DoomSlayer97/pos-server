@@ -40,6 +40,11 @@ export class CreateUser1703100725268 implements MigrationInterface {
                         name: 'profileId',
                         type: 'int',
                     },
+                    {
+                        name: 'isDeleted',
+                        type: 'tinyint',
+                        default: 0
+                    },
                 ]
             }),
             true

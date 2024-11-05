@@ -21,8 +21,9 @@ export class CreateCategory1701090531372 implements MigrationInterface {
                     type: 'varchar',
                    },
                    {
-                    name: 'isDeleted',
-                    type: 'tinyint',
+                        name: 'isDeleted',
+                        type: 'tinyint',
+                        default: 0
                    },
                 ]
             }),

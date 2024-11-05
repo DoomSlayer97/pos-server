@@ -36,6 +36,11 @@ export class CreateOrder1703097400573 implements MigrationInterface {
                         name: 'customerId',
                         type: 'int',
                     },
+                    {
+                        name: 'isDeleted',
+                        type: 'tinyint',
+                        default: 0
+                    },
                 ]
             }),
             true

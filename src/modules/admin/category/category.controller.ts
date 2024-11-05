@@ -16,7 +16,6 @@ export class CategoryController {
   async create(
     @Body() dto: CreateCategoryDto
   ) {
-
     const storedCategory = await this.categoryService.create(dto);
 
     return this.helperService.setResponse({
@@ -24,13 +23,11 @@ export class CategoryController {
       data: storedCategory,
       message: 'stored_category'
     });
-
   }
 
   @Get()
   @HttpCode(200)
   async findAll() {
-
     const findedCategory = await this.categoryService.findAll();
 
     return this.helperService.setResponse({
@@ -38,7 +35,6 @@ export class CategoryController {
       data: findedCategory,
       message: 'finded_categories'
     })
-
   }
 
   @Get('/:id')
@@ -46,7 +42,6 @@ export class CategoryController {
   async findOne(
     @Param('id') id: number,
   ) {
-
     const findedCategory = await this.categoryService.findOne(id);
 
     return this.helperService.setResponse({
@@ -54,7 +49,6 @@ export class CategoryController {
       data: findedCategory,
       message: 'finded_category'
     });
-
   }
 
   @Put('/:id')
@@ -63,7 +57,6 @@ export class CategoryController {
     @Param('id') id: number,
     @Body() dto: UpdateCategoryDto,
   ) {
-
     const updatedCategory = await this.categoryService.update(id, dto);
 
     return this.helperService.setResponse({
@@ -71,7 +64,6 @@ export class CategoryController {
       data: updatedCategory,
       message: 'updated_category'
     });
-
   }
 
   @Delete('/:id')
@@ -79,14 +71,12 @@ export class CategoryController {
   async delete(
     @Param('id') id: number,
   ) {
-
-    const deletedCategory = await this.categoryService.delete(id);
+    await this.categoryService.delete(id);
 
     return this.helperService.setResponse({
       status: false,
       message: 'deleted_category'
     });
-    
   }
 
 }

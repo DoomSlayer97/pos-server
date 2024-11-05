@@ -28,6 +28,11 @@ export class CreateModuleAccess1703096967627 implements MigrationInterface {
                         name: 'moduleId',
                         type: 'int',
                     },
+                    {
+                        name: 'isDeleted',
+                        type: 'tinyint',
+                        default: 0
+                    },
                 ]
             }),
             true
