@@ -1,13 +1,13 @@
-import { MigrationInterface, QueryRunner, Table } from "typeorm"
 import { ENUMS } from "@types"
+import { MigrationInterface, QueryRunner, Table } from "typeorm"
 
-export class CreateProductProviders1702947360865 implements MigrationInterface {
+export class CreateProfileModules1734737904136 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: ENUMS.DBTABLES.PRODUCTPROVIDER,
-                schema: ENUMS.DBSCHEMAS.PRODUCT,
+                name: ENUMS.DBTABLES.PROFILEMODULE,
+                schema: ENUMS.DBSCHEMAS.USER,
                 columns: [
                     {
                         name: 'id',
@@ -17,16 +17,12 @@ export class CreateProductProviders1702947360865 implements MigrationInterface {
                         generationStrategy: "increment"
                     },
                     {
-                        name: 'name',
-                        type: 'varchar'
+                        name: 'templateProfileId',
+                        type: 'int',
                     },
                     {
-                        name: 'number',
-                        type: 'varchar'
-                    },
-                    {
-                        name: 'email',
-                        type: 'varchar'
+                        name: 'moduleId',
+                        type: 'int',
                     },
                     {
                         name: 'isDeleted',
@@ -40,7 +36,7 @@ export class CreateProductProviders1702947360865 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable('productproviders');
+        await queryRunner.dropTable(new Table({ schema: ENUMS.DBSCHEMAS.USER, name: ENUMS.DBTABLES.PROFILEMODULE }));
     }
 
 }

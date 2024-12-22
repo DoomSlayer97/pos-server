@@ -8,6 +8,7 @@ export class CreateOrder1703097400573 implements MigrationInterface {
         await queryRunner.createTable(
             new Table({
                 name: ENUMS.DBTABLES.ORDER,
+                schema: ENUMS.DBSCHEMAS.SALE,
                 columns: [
                     {
                         name: 'id',
@@ -38,7 +39,7 @@ export class CreateOrder1703097400573 implements MigrationInterface {
                     },
                     {
                         name: 'isDeleted',
-                        type: 'tinyint',
+                        type: 'smallint',
                         default: 0
                     },
                 ]

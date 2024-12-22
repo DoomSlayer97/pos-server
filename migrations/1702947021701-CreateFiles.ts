@@ -7,6 +7,7 @@ export class CreateFiles1702947021701 implements MigrationInterface {
         await queryRunner.createTable(
             new Table({
                 name: ENUMS.DBTABLES.FILES,
+                schema: ENUMS.DBSCHEMAS.MISC,
                 columns: [
                     {
                         name: 'id',
@@ -25,7 +26,7 @@ export class CreateFiles1702947021701 implements MigrationInterface {
                     },
                     {
                         name: 'isDeleted',
-                        type: 'tinyint',
+                        type: 'smallint',
                         default: 0
                     },
                 ]

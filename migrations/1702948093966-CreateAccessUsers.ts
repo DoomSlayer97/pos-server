@@ -7,6 +7,7 @@ export class CreateAccessUsers1702948093966 implements MigrationInterface {
         await queryRunner.createTable(
             new Table({
                 name: ENUMS.DBTABLES.ACCESSUSER,
+                schema: ENUMS.DBSCHEMAS.USER,
                 columns: [
                     {
                         name: 'id',
@@ -17,7 +18,7 @@ export class CreateAccessUsers1702948093966 implements MigrationInterface {
                     },
                     {
                         name: 'hasAccess',
-                        type: 'tinyint',
+                        type: 'smallint',
                     },
                     {
                         name: 'userId',
@@ -29,7 +30,7 @@ export class CreateAccessUsers1702948093966 implements MigrationInterface {
                     },
                     {
                         name: 'isDeleted',
-                        type: 'tinyint',
+                        type: 'smallint',
                         default: 0
                     },
                 ]

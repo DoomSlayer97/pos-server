@@ -11,5 +11,14 @@ export enum DBTABLES {
   MODULEACCESS = 'moduleaccess',
   ORDERPRODUCT = 'orderproducts',
   PRODUCTPROVIDER = 'productproviders',
-  TEMPLATEPROFILE = 'templateprofiles'
+  TEMPLATEPROFILE = 'templateprofiles',
+  PROFILEMODULE = 'profilemodules',
+  PROFILEACCESS = 'profileaccess'
+}
+
+export enum DBSCHEMAS {
+  SALE = 'sales',
+  USER = 'users',
+  PRODUCT = 'products',
+  MISC = 'miscs'
 }

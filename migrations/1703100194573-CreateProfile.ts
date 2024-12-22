@@ -8,6 +8,7 @@ export class CreateProfile1703100194573 implements MigrationInterface {
         await queryRunner.createTable(
             new Table({
                 name: ENUMS.DBTABLES.PROFILE,
+                schema: ENUMS.DBSCHEMAS.USER,
                 columns: [
                     {
                         name: 'id',
@@ -22,7 +23,7 @@ export class CreateProfile1703100194573 implements MigrationInterface {
                     },
                     {
                         name: 'isCustom',
-                        type: 'tinyint',
+                        type: 'smallint',
                     },
                     {
                         name: 'templateProfileId',
@@ -30,7 +31,7 @@ export class CreateProfile1703100194573 implements MigrationInterface {
                     },
                     {
                         name: 'isDeleted',
-                        type: 'tinyint',
+                        type: 'smallint',
                         default: 0
                     },
                 ]

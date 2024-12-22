@@ -8,6 +8,7 @@ export class CreateModuleAccess1703096967627 implements MigrationInterface {
         await queryRunner.createTable(
             new Table({
                 name: ENUMS.DBTABLES.MODULEACCESS,
+                schema: ENUMS.DBSCHEMAS.USER,
                 columns: [
                     {
                         name: 'id',
@@ -22,7 +23,7 @@ export class CreateModuleAccess1703096967627 implements MigrationInterface {
                     },
                     {
                         name: 'defaultHasAccess',
-                        type: 'tinyint',
+                        type: 'smallint',
                     },
                     {
                         name: 'moduleId',
@@ -30,7 +31,7 @@ export class CreateModuleAccess1703096967627 implements MigrationInterface {
                     },
                     {
                         name: 'isDeleted',
-                        type: 'tinyint',
+                        type: 'smallint',
                         default: 0
                     },
                 ]

@@ -7,6 +7,7 @@ export class CreateCustomer1702946609521 implements MigrationInterface {
         await queryRunner.createTable(
             new Table({
                 name: ENUMS.DBTABLES.CUSTOMER,
+                schema: ENUMS.DBSCHEMAS.SALE,
                 columns: [
                     {
                         name: 'id',
@@ -29,7 +30,7 @@ export class CreateCustomer1702946609521 implements MigrationInterface {
                     },
                     {
                         name: 'isDeleted',
-                        type: 'tinyint',
+                        type: 'smallint',
                         default: 0
                     },
                 ]

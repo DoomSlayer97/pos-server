@@ -8,6 +8,7 @@ export class CreateProduct1703098422307 implements MigrationInterface {
         await queryRunner.createTable(
             new Table({
                 name: ENUMS.DBTABLES.PRODUCT,
+                schema: ENUMS.DBSCHEMAS.PRODUCT,
                 columns: [
                     {
                         name: 'id',
@@ -48,7 +49,7 @@ export class CreateProduct1703098422307 implements MigrationInterface {
                     },
                     {
                         name: 'isDeleted',
-                        type: 'tinyint',
+                        type: 'smallint',
                         default: 0
                     },
                 ]

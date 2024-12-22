@@ -88,13 +88,11 @@ export class OrderService {
 
       return true;
     } catch (error) {
-
       console.log(error);
 
       await queryRunner.rollbackTransaction();
 
       throw new HttpException("error_server", HttpStatus.INTERNAL_SERVER_ERROR);
-      
     } finally {
       await queryRunner.release();
     }
