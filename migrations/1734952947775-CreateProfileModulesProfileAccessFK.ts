@@ -1,30 +1,30 @@
-import { MigrationInterface, QueryRunner, TableForeignKey, Table } from "typeorm"
-import { ENUMS } from "@types"
+import { ENUMS } from "@types";
+import { MigrationInterface, QueryRunner, Table, TableForeignKey } from "typeorm"
 
 const table = new Table({ 
-    name: ENUMS.DBTABLES.MODULEACCESS, 
-    schema: ENUMS.DBSCHEMAS.USER 
+    name: ENUMS.DBTABLES.PROFILEACCESS, 
+    schema: ENUMS.DBSCHEMAS.USER
 });
 
-export class CreateModuleModuleAccessReferenceFK1703111638394 implements MigrationInterface {
+export class CreateProfileModulesProfileAccessFK1734952947775 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createForeignKey(
             table,
             new TableForeignKey({
-                columnNames: ['moduleId'],
+                columnNames: ['profileModuleId'],
                 referencedSchema: ENUMS.DBSCHEMAS.USER,
                 referencedColumnNames: ['id'],
-                referencedTableName: ENUMS.DBTABLES.MODULE,
+                referencedTableName: ENUMS.DBTABLES.PROFILEMODULE,
                 onDelete: 'CASCADE'
             })
-        )
+        );
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.dropForeignKey(
-            table, 
-            'moduleId'
+            table,
+            'profileModuleId'
         );
     }
 

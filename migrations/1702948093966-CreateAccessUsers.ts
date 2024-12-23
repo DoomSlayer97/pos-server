@@ -25,7 +25,7 @@ export class CreateAccessUsers1702948093966 implements MigrationInterface {
                         type: 'int',
                     },
                     {
-                        name: 'moduleAccessId',
+                        name: 'profileAccessId',
                         type: 'int',
                     },
                     {

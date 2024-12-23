@@ -1,14 +1,13 @@
-import { MigrationInterface, QueryRunner, Table } from "typeorm"
 import { ENUMS } from "@types"
+import { MigrationInterface, QueryRunner, Table } from "typeorm"
 
-
-export class CreateModuleAccess1703096967627 implements MigrationInterface {
+export class CreateProfileAccess1734843952872 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: ENUMS.DBTABLES.MODULEACCESS,
-                schema: ENUMS.DBSCHEMAS.USER,
+                name: ENUMS.DBTABLES.PROFILEACCESS,
+                schema: ENUMS.DBSCHEMAS.USER,      
                 columns: [
                     {
                         name: 'id',
@@ -18,17 +17,12 @@ export class CreateModuleAccess1703096967627 implements MigrationInterface {
                         generationStrategy: "increment"
                     },
                     {
-                        name: 'name',
-                        type: 'varchar',
+                        name: 'profileModuleId',
+                        type: 'int',
                     },
                     {
-                        name: 'defaultHasAccess',
-                        type: 'smallint',
-                    },
-                    {
-                        name: 'isDeleted',
-                        type: 'smallint',
-                        default: 0
+                        name: 'moduleAccessId',
+                        type: 'int',
                     },
                 ]
             }),
@@ -37,7 +31,7 @@ export class CreateModuleAccess1703096967627 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable('moduleaccess');
+        await queryRunner.dropTable(new Table({ schema: ENUMS.DBSCHEMAS.USER, name: ENUMS.DBTABLES.PROFILEACCESS }));
     }
 
 }

@@ -17,7 +17,7 @@ export class CreateProfileModules1734737904136 implements MigrationInterface {
                         generationStrategy: "increment"
                     },
                     {
-                        name: 'templateProfileId',
+                        name: 'profileModuleId',
                         type: 'int',
                     },
                     {
