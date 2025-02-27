@@ -22,3 +22,11 @@ export enum DBSCHEMAS {
   PRODUCT = 'products',
   MISC = 'miscs'
 }
+
+export enum DBVOIDFUNCTIONS {
+  CREATE_PRODUCT = 'fn_create_product',
+}
+
+export enum DBFUNCTIONS {
+  GENERATE_SKU = 'generate_sku'
+}

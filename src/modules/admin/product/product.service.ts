@@ -28,21 +28,14 @@ export class ProductService {
     newProduct.stock = dto.stock;
     newProduct.status = dto.status;
 
-    const findedCategory = await this.categoryRepository.findOneBy({ id: dto.categoryId });
-
-    if ( !findedCategory )
-      throw new HttpException("category_not_found", HttpStatus.NOT_FOUND);
-
-    newProduct.category = findedCategory;
-
-    const findedProvider = await this.providerRepository.findOneBy({ id: dto.providerId });
-
-    if ( !findedProvider )
-      throw new HttpException("provider_not_found", HttpStatus.NOT_FOUND);
-
-    newProduct.provider = findedProvider;
-
-    return this.productRepository.save(newProduct);
+    await this.productRepository.query("select products.fn_create_product($1, $2, $3, $4, $5, $6)", [
+      newProduct.name,
+      newProduct.price,
+      newProduct.stock,
+      newProduct.status,
+      dto.category,
+      dto.provider
+    ]);
 
   }
 

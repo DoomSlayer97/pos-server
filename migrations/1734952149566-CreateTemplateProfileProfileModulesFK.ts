@@ -13,7 +13,7 @@ export class CreateTemplateProfileProfileModulesFK1734952149566 implements Migra
         await queryRunner.createForeignKey(
             table,
             new TableForeignKey({
-                columnNames: ['profileModuleId'],
+                columnNames: ['templateProfileId'],
                 referencedSchema: ENUMS.DBSCHEMAS.USER,
                 referencedColumnNames: ['id'],
                 referencedTableName: ENUMS.DBTABLES.TEMPLATEPROFILE,
@@ -25,7 +25,7 @@ export class CreateTemplateProfileProfileModulesFK1734952149566 implements Migra
     public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.dropForeignKey(
             table,
-            'profileModuleId'
+            'templateProfileId'
         );
     }
 
